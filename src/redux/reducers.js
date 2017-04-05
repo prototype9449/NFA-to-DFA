@@ -1,16 +1,11 @@
 import { combineReducers } from 'redux'
 
-export const makeRootReducer = (asyncReducers) => {
+import {reducer} from './transition'
+
+export const makeRootReducer = () => {
   return combineReducers({
-    ...asyncReducers
+    a: reducer
   })
-}
-
-export const injectReducer = (store, { key, reducer }) => {
-  if (Object.hasOwnProperty.call(store.asyncReducers, key)) return
-
-  store.asyncReducers[key] = reducer
-  store.replaceReducer(makeRootReducer(store.asyncReducers))
 }
 
 export default makeRootReducer
