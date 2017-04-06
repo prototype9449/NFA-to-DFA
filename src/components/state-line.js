@@ -23,11 +23,11 @@ class StateLine extends Component {
   render() {
     const {stateLine, symbolLine} = this.props
 
-    return <div>
-      <div>States: <input type="text" value={stateLine} onChange={this.handleStateChange}/></div>
-      <div>Start state - <input type="text" onChange={this.handleStartStateChange}/></div>
-      <div>End state - <input type="text" onChange={this.handleEndStateChange}/></div>
-      <div>Symbols: <input type="text" value={symbolLine} onChange={this.handleSymbolChange}/></div>
+    return <div className="values">
+      <div className="values-item"><div className="values-item-text">States:</div> <input type="text" className="kek" value={stateLine} onChange={this.handleStateChange}/></div>
+      <div className="values-item"><div className="values-item-text">Start state:</div> <input type="text" onChange={this.handleStartStateChange}/></div>
+      <div className="values-item"><div className="values-item-text">End state:</div> <input type="text" onChange={this.handleEndStateChange}/></div>
+      <div className="values-item"><div className="values-item-text">Symbols:</div> <input type="text" value={symbolLine} onChange={this.handleSymbolChange}/></div>
     </div>
   }
 }

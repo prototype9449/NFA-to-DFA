@@ -15,12 +15,11 @@ class Transitions extends Component {
   render() {
     const {transitions} = this.props
 
-    return <div>
-      <div>Transitions</div>
-      <div onClick={this.handleClick}>Add</div>
+    return <div className="transitions">
+      <div className="transitions_theme">Transitions <div onClick={this.handleClick} className="button" id="addButton">+</div></div>
       {transitions.map((x,i) => {
-        return <div key={i}>
-          <span>{`${i+1}) `}</span><input type="text" value={x.value} onChange={this.handleChange(i)}/>
+        return <div key={i} className="transition_item">
+          <span>{`${(i+1)}`}</span><input type="text" value={x.value} onChange={this.handleChange(i)}/>
         </div>
       })}
       <div>

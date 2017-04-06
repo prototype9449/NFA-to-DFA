@@ -39,9 +39,9 @@ class Graph extends Component {
   }
 
   render() {
-    return <div>
-      <div onClick={this.handleClick}>
-        Convert
+    return <div id="kek">
+      <div onClick={this.handleClick} className="graph_command_panel">
+        <div className="button">Convert</div>
       </div>
       <div ref={x => this.graph = x} className="graph"/>
     </div>
