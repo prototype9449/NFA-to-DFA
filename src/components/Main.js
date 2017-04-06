@@ -5,6 +5,7 @@ import '../styles/main'
 
 import StateLine from './state-line'
 import Transitions from './transitions'
+import Graph from './graph'
 
 class AppComponent extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class AppComponent extends React.Component {
       <div>
         <StateLine/>
         <Transitions/>
+        <Graph/>
       </div>
     )
   }

@@ -1,6 +1,8 @@
 export const CHANGE_STATE_LINE = 'CHANGE_STATE_LINE'
 export const CHANGE_SYMBOL_LINE = 'CHANGE_SYMBOL_LINE'
-export const CHANGE_TRANSITIONSLINE = 'CHANGE_TRANSITIONSLINE'
+export const CHANGE_TRANSITIONS_LINE = 'CHANGE_TRANSITIONS_LINE'
+export const CHANGE_START_LINE = 'CHANGE_START_LINE'
+export const CHANGE_END_LINE = 'CHANGE_END_LINE'
 export const ADD_TRANSITION = 'ADD_TRANSITION'
 
 export const changeStateLine = (value) => ({
@@ -19,14 +21,26 @@ export const addTransition = (value) => ({
 })
 
 export const changeTransitionLine = ({value, index}) => ({
-  type: CHANGE_TRANSITIONSLINE,
+  type: CHANGE_TRANSITIONS_LINE,
   value,
   index
+})
+
+export const changeStartLine = (value) => ({
+  type: CHANGE_START_LINE,
+  value
+})
+
+export const changeEndLine = (value) => ({
+  type: CHANGE_END_LINE,
+  value
 })
 
 const initialState = {
   stateLine: '',
   symbolLine: '',
+  startLine: '',
+  endLine: '',
   states: [],
   symbols: [],
   transitions: []
@@ -50,7 +64,21 @@ export function reducer(state = initialState, action = {}) {
         symbolLine: action.value
       }
     }
-    case CHANGE_TRANSITIONSLINE:
+    case CHANGE_START_LINE:
+    {
+      return {
+        ...state,
+        startLine: action.value
+      }
+    }
+    case CHANGE_END_LINE:
+    {
+      return {
+        ...state,
+        endLine: action.value
+      }
+    }
+    case CHANGE_TRANSITIONS_LINE:
     {
       const [first, symbol, second] = action.value.split(' ')
 

@@ -20,11 +20,12 @@ class Transitions extends Component {
       <div onClick={this.handleClick}>Add</div>
       {transitions.map((x,i) => {
         return <div key={i}>
-          <input type="text" value={x.value} onChange={this.handleChange(i)}/>
+          <span>{`${i+1}) `}</span><input type="text" value={x.value} onChange={this.handleChange(i)}/>
         </div>
       })}
       <div>
       </div>
+
     </div>
   }
 }
